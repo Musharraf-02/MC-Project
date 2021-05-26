@@ -2,7 +2,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Prefrences"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/textView9"
@@ -28,7 +28,8 @@
             android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-medium"
             android:text="select to add prefrences"
-            android:textColor="#C62828" />
+            android:textColor="#C62828"
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,84 +43,76 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/sports"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_sports_basketball_24"
-                android:drawablePadding="5dp"
-                android:text="Sport"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                android:drawableLeft="@drawable/ic_outline_sports_basketball_24"
+                android:text="Sports"
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/politics"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_group_24"
-                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_outline_group_24"
                 android:text="Politics"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="match_parent"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fashion"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_wc_24"
-                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_outline_wc_24"
                 android:text="Fashion"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
-        </LinearLayout>
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox6"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/religion"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_dark_mode_24"
-                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_outline_dark_mode_24"
                 android:text="Religion"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_health_and_safety_24"
-                android:drawablePadding="5dp"
-                android:text="Health"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
-
-            <CheckBox
-                android:id="@+id/checkBox8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_blur_circular_24"
-                android:drawablePadding="5dp"
-                android:text="World"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,27 +127,34 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/checkBox9"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/hollywood"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_local_movies_24"
-                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_outline_local_movies_24"
                 android:text="Hollywood"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox10"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/covid19"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_coronavirus_24"
-                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_outline_coronavirus_24"
                 android:text="Covid-19"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -169,39 +169,88 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/technology"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_computer_24"
-                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_outline_computer_24"
                 android:text="Technology"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox5"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/health"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/ic_outline_movie_24"
-                android:drawablePadding="5dp"
-                android:text="Entertainment"
-                android:textColor="#FFFFFF"
-                card_view:buttonTint="#C62828" />
+                android:drawableLeft="@drawable/ic_outline_health_and_safety_24"
+                android:text="Health"
+                card_view:backgroundTint="#C62828"
+                card_view:cornerRadius="15dp" />
+
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/entertainment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_outline_movie_24"
+            android:text="Entertainment"
+            card_view:backgroundTint="#C62828"
+            card_view:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_outline_blur_circular_24"
+            android:text="World"
+            card_view:backgroundTint="#C62828"
+            card_view:cornerRadius="15dp" />
+    </LinearLayout>
 
         <Button
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:text="Add Prefrences"
-            card_view:backgroundTint="#C62828" />
+            card_view:backgroundTint="#C62828"
+            card_view:cornerRadius="15dp" />
     </LinearLayout>
 </ScrollView>
