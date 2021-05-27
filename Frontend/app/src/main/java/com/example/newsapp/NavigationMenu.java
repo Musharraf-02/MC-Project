@@ -60,9 +60,7 @@ public class NavigationMenu extends AppCompatActivity {
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer((GravityCompat.START));
-            Toast.makeText(getApplicationContext(), "Close", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Close", Toast.LENGTH_SHORT).show();
             super.onBackPressed();
         }
     }
