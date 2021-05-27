@@ -178,7 +178,7 @@ public class Preferences extends AppCompatActivity {
                 }
                 else
                 {
-                    world.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_outline_blur_circular_24, 0,0, 0);
+                    world.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_baseline_language_24, 0,0, 0);
                     worldCheck=false;
                 }
             }
