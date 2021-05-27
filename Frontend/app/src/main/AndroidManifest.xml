@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp">
+        <activity android:name=".Home">
+
+        </activity>
         <activity android:name=".NavigationMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +22,15 @@
         <activity android:name=".Preferences">
 
         </activity>
-        <activity android:name=".Categories"></activity>
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Categories">
+
+        </activity>
+        <activity android:name=".SignUp">
+
+        </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
