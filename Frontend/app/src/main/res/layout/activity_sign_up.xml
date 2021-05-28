@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:text="Sign Up to continue"
-            android:textColor="#FFFFFF"
+            android:textColor="#C62828"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

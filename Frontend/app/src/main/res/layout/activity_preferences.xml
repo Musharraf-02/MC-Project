@@ -28,7 +28,7 @@
             android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-medium"
             android:text="select to add prefrences"
-            android:textColor="#FFFFFF"
+            android:textColor="#C62828"
             android:textSize="18sp" />
 
         <LinearLayout
