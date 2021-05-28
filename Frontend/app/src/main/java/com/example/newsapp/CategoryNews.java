@@ -10,16 +10,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Saved extends AppCompatActivity {
+public class CategoryNews extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     List<News> newsList = new ArrayList<News>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_saved);
+        setContentView(R.layout.activity_category_news);
         setListAdapter();
     }
     private void setListAdapter() {
@@ -35,7 +34,7 @@ public class Saved extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new RecyclerViewAdapterSavedNews(newsList,Saved.this) {
+        adapter = new RecyclerViewAdapter(newsList,CategoryNews.this) {
 
         };
         recyclerView.setAdapter(adapter);
