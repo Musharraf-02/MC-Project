@@ -35,7 +35,7 @@ public class Saved extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new RecyclerViewAdapter(newsList,Saved.this) {
+        adapter = new RecyclerViewAdapterSavedNews(newsList,Saved.this) {
 
         };
         recyclerView.setAdapter(adapter);

@@ -12,25 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
+public class  RecyclerViewAdapterSavedNews extends RecyclerView.Adapter<RecyclerViewAdapterSavedNews.MyViewHolder>{
     List<News> newsList;
     Activity mAct;
-
-    public RecyclerViewAdapter(List<News> news, Activity mAct) {
+    public RecyclerViewAdapterSavedNews(List<News> news, Activity mAct) {
         this.newsList = news;
         this.mAct = mAct;
     }
-
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerViewAdapterSavedNews.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.news, parent, false);
-        return new MyViewHolder(itemView);
+                .inflate(R.layout.savednews, parent, false);
+        return new RecyclerViewAdapterSavedNews.MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerViewAdapterSavedNews.MyViewHolder holder, int position) {
         holder.data=newsList.get(position);
         holder.textViewTitle.setText(holder.data.getTitle());
         holder.textViewDescription.setText(holder.data.getDescription());
@@ -60,4 +58,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewDate = itemView.findViewById(R.id.newsDateSaved);
         }
     }
+
 }
