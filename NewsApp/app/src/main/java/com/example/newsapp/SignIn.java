@@ -64,8 +64,8 @@ public class SignIn extends AppCompatActivity {
         }
     }
 
-    public void skipToMainPage(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    public void skipToHomePage(View view) {
+        startActivity(new Intent(getApplicationContext(), Home.class));
         finish();
     }
 

@@ -15,10 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null)
             startActivity(new Intent(getApplicationContext(), SignIn.class));
-            finish();
-        }
+        else
+            startActivity(new Intent(getApplicationContext(), Home.class));
+
+        finish();
 
     }
 

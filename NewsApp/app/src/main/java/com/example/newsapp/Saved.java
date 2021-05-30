@@ -14,7 +14,6 @@ public class Saved extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    List<News> newsList = new ArrayList<News>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +21,12 @@ public class Saved extends AppCompatActivity {
         setContentView(R.layout.activity_saved);
         setListAdapter();
     }
-    private void setListAdapter() {
-        News n1 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n2 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n3 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n4 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n5 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n6 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
 
-        newsList.addAll(Arrays.asList(new News[]{n1,n2,n3,n4,n5,n6}));
-        recyclerView = findViewById(R.id.recylcerViewNewsCategory);
+    private void setListAdapter() {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new RecyclerViewAdapterSavedNews(newsList,Saved.this) {
+        adapter = new RecyclerViewAdapterSavedNews(null, Saved.this) {
 
         };
         recyclerView.setAdapter(adapter);

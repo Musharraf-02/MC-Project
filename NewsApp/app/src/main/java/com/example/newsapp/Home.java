@@ -5,38 +5,65 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.CallLog;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.google.firebase.firestore.auth.User;
+import com.google.gson.Gson;
+import com.google.type.DateTime;
+import com.kwabenaberko.newsapilib.NewsApiClient;
+import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
+import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Home extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
-    List<News> newsList = new ArrayList<News>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        setListAdapter();
-    }
-    private void setListAdapter() {
-        News n1 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n2 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n3 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n4 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n5 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
-        News n6 = new News("Lorem Ipsum is simply dummy text of the printing and typesetting industry."," Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.", "Source", "27-5-2021");
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
 
-        newsList.addAll(Arrays.asList(new News[]{n1,n2,n3,n4,n5,n6}));
-        recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        adapter = new RecyclerViewAdapter(newsList,Home.this) {
+        NewsApiClient newsApiClient = new NewsApiClient("0d074aa66c774b2c8b1a6385746436c0");
 
-        };
-        recyclerView.setAdapter(adapter);
+        newsApiClient.getEverything(
+                new EverythingRequest.Builder()
+                        .q("health")
+                        .language("en")
+                        .build(),
+                new NewsApiClient.ArticlesResponseCallback() {
+                    @Override
+                    public void onSuccess(ArticleResponse response) {
+                        recyclerView.setAdapter(new RecyclerViewAdapter(response.getArticles(), Home.this));
+                        findViewById(R.id.progressBar).setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable) {
+                        System.out.println(throwable.getMessage());
+                    }
+                }
+        );
+
     }
 }
