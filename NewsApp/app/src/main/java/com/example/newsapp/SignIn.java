@@ -37,13 +37,13 @@ public class SignIn extends AppCompatActivity {
         String uPassword = password.getText().toString();
 
         if (TextUtils.isEmpty(uEmail))
-            email.setError("Email is required");
+            email.setError("Email is required.");
 
         else if (!Patterns.EMAIL_ADDRESS.matcher(uEmail).matches())
-            email.setError("Not a valid email");
+            email.setError("Enter a valid email address.");
 
         else if (TextUtils.isEmpty(uPassword))
-            password.setError("Password is missing");
+            password.setError("Password is required.");
 
         else {
 
@@ -54,7 +54,7 @@ public class SignIn extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Login successful.", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 } else

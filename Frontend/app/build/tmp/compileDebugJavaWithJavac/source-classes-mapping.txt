@@ -1,0 +1,40 @@
+com/example/newsapp/RecyclerViewAdapterSavedNews.java
+ com.example.newsapp.RecyclerViewAdapterSavedNews
+ com.example.newsapp.RecyclerViewAdapterSavedNews$MyViewHolder
+com/example/newsapp/News.java
+ com.example.newsapp.News
+com/example/newsapp/Saved.java
+ com.example.newsapp.Saved
+ com.example.newsapp.Saved$1
+com/example/newsapp/CategoryNews.java
+ com.example.newsapp.CategoryNews
+ com.example.newsapp.CategoryNews$1
+com/example/newsapp/NavigationMenu.java
+ com.example.newsapp.NavigationMenu
+ com.example.newsapp.NavigationMenu$1
+com/example/newsapp/SignUp.java
+ com.example.newsapp.SignUp
+com/example/newsapp/Home.java
+ com.example.newsapp.Home
+ com.example.newsapp.Home$1
+com/example/newsapp/Preferences.java
+ com.example.newsapp.Preferences
+ com.example.newsapp.Preferences$1
+ com.example.newsapp.Preferences$10
+ com.example.newsapp.Preferences$2
+ com.example.newsapp.Preferences$3
+ com.example.newsapp.Preferences$4
+ com.example.newsapp.Preferences$5
+ com.example.newsapp.Preferences$6
+ com.example.newsapp.Preferences$7
+ com.example.newsapp.Preferences$8
+ com.example.newsapp.Preferences$9
+com/example/newsapp/RecyclerViewAdapter.java
+ com.example.newsapp.RecyclerViewAdapter
+ com.example.newsapp.RecyclerViewAdapter$MyViewHolder
+com/example/newsapp/Categories.java
+ com.example.newsapp.Categories
+com/example/newsapp/BuildConfig.java
+ com.example.newsapp.BuildConfig
+com/example/newsapp/MainActivity.java
+ com.example.newsapp.MainActivity

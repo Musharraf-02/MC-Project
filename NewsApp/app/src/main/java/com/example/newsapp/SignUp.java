@@ -49,28 +49,28 @@ public class SignUp extends AppCompatActivity {
         String uConfirmPassword = confirmPassword.getText().toString();
 
         if (TextUtils.isEmpty(uName))
-            name.setError("Name is required");
+            name.setError("Username is required.");
 
         else if (TextUtils.isEmpty(uEmail))
-            email.setError("Email is required");
+            email.setError("Email is required.");
 
         else if (!Patterns.EMAIL_ADDRESS.matcher(uEmail).matches())
-            email.setError("Not a valid email address");
+            email.setError("Enter a valid email address.");
 
         else if (TextUtils.isEmpty(uPassword))
-            password.setError("Password required (at least 6 characters)");
+            password.setError("Enter password (at least 6 characters).");
 
         else if (uPassword.contains(" ") || uPassword.contains("\t"))
-            password.setError("Password must not contain any white space");
+            password.setError("Password must not contain any white space.");
 
         else if (uPassword.length() < MINIMUM_PASSWORD_LENGTH)
-            password.setError("Password must contain at least 6 characters");
+            password.setError("Password must contain at least 6 characters.");
 
         else if (TextUtils.isEmpty(uConfirmPassword))
-            confirmPassword.setError("Confirm password please");
+            confirmPassword.setError("Confirm password please.");
 
         else if (!uPassword.equals(uConfirmPassword))
-            confirmPassword.setError("Password and confirm password does not match");
+            confirmPassword.setError("Password and confirm password does not match.");
 
         else {
             progressBar.setVisibility(View.VISIBLE);
@@ -85,7 +85,7 @@ public class SignUp extends AppCompatActivity {
                             .addOnSuccessListener(documentReference -> {
 
                                 progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getApplicationContext(), "Sign up successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Sign up successful.", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
                             })
