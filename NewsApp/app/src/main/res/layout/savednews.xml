@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#00404040">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -28,14 +28,14 @@
             android:paddingBottom="10dp">
 
             <ImageView
-                android:id="@+id/newsImageSaved"
+                android:id="@+id/newsImage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/bbc" />
 
             <TextView
-                android:id="@+id/newsTitleSaved"
+                android:id="@+id/newsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
@@ -48,7 +48,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/newsDescriptionSaved"
+                android:id="@+id/newsDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -65,7 +65,7 @@
                 android:paddingRight="10dp">
 
                 <TextView
-                    android:id="@+id/newsSourceSaved"
+                    android:id="@+id/newsSource"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -74,7 +74,7 @@
                     android:textColor="#C62828" />
 
                 <TextView
-                    android:id="@+id/newsDateSaved"
+                    android:id="@+id/newsDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -85,7 +85,7 @@
                     android:textColor="#FFFFFF" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/deleteSavedNews"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

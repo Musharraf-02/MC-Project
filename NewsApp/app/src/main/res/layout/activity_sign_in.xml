@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     android:background="#CC000000"
     android:fillViewport="true"
-    tools:context=".SignIn">
+    tools:context=".firebase.SignIn">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg3"
-        tools:context=".MainActivity">
+        tools:context=".others.MainActivity">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewRefresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewRefresh" />
 
         <EditText
             android:id="@+id/editTextEmail"

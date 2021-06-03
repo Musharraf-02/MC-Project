@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.firebase;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.newsapp.R;
+import com.example.newsapp.others.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -76,34 +78,30 @@ public class SignUp extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
 
             firebaseAuth.createUserWithEmailAndPassword(uEmail, uPassword).addOnCompleteListener(task -> {
+
                 if (task.isSuccessful()) {
 
                     HashMap<String, String> user = new HashMap<>();
                     user.put("name", uName);
 
-                    firebaseFirestore.collection("users").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).set(user)
-                            .addOnSuccessListener(documentReference -> {
+                    Toast.makeText(getApplicationContext(), "Sign up successful.", Toast.LENGTH_LONG).show();
 
-                                progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getApplicationContext(), "Sign up successful.", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                finish();
-                            })
-                            .addOnFailureListener(e -> {
+                    firebaseFirestore.collection("users").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).set(user);
 
-                                progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                            });
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+
                 } else {
 
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(), Objects.requireNonNull(Objects.requireNonNull(task.getException()).getMessage()).toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), Objects.requireNonNull(Objects.requireNonNull(task.getException()).getMessage()), Toast.LENGTH_LONG).show();
                 }
             });
         }
     }
 
     public void switchToSignInPage(View view) {
+
         startActivity(new Intent(getApplicationContext(), SignIn.class));
         finish();
     }

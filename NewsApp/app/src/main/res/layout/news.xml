@@ -84,17 +84,19 @@
                     android:layout_weight="1"
                     android:drawableLeft="@drawable/ic_outline_access_time_24"
                     android:drawablePadding="5dp"
-                    android:text="27-5-2021"
+                    android:text="Date"
                     android:textColor="#FFFFFF" />
 
                 <TextView
+                    android:id="@+id/saveNews"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="saveNews"
                     android:drawableLeft="@drawable/ic_outline_bookmark_border_24" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/textViewShare"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

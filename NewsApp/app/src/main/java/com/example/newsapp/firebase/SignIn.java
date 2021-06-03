@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.firebase;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.newsapp.R;
+import com.example.newsapp.others.Home;
+import com.example.newsapp.others.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;

@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#404040"
-    tools:context=".Home">
+    tools:context=".others.Home">
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Home"
+        android:text="Explore the World"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="5dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,21 +36,24 @@
             android:layout_marginLeft="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="0dp">
 
             <Button
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="1dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="Sports"
-                android:textSize="14sp"
-                app:backgroundTint="#C62828"
-                app:cornerRadius="15dp" />
+                android:onClick="headlines"
+                android:text="Headlines"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#d94075"
+                app:cornerRadius="5dp" />
 
             <Button
                 android:id="@+id/button11"
@@ -62,21 +65,12 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:text="Health"
-                app:backgroundTint="#C62828"
-                app:cornerRadius="15dp" />
+                android:onClick="healthNews"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:backgroundTint="#d94075"
+                app:cornerRadius="5dp" />
 
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:text="Politics"
-                app:backgroundTint="#C62828"
-                app:cornerRadius="15dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,23 +87,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:text="Entertainment"
-                app:backgroundTint="#C62828"
-                app:cornerRadius="15dp" />
+                android:onClick="entertainmentNews"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:backgroundTint="#d94075"
+                app:cornerRadius="5dp" />
 
             <Button
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:text="Technology"
-                app:backgroundTint="#C62828"
-                app:cornerRadius="15dp" />
+                android:onClick="technologyNews"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:backgroundTint="#d94075"
+                app:cornerRadius="5dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -130,6 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/textView11"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/textView11"

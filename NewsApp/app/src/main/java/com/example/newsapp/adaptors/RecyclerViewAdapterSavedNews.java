@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.adaptors;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,37 +13,38 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.newsapp.R;
 import com.kwabenaberko.newsapilib.models.Article;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class RecyclerViewAdapterSavedNews extends RecyclerView.Adapter<RecyclerViewAdapterSavedNews.MyViewHolder> {
 
-    List<Article> newsArticles;
+    public List<Article> savedNewsList;
     Activity mAct;
+    OnDeleteListener onDeleteListener;
 
-    public RecyclerViewAdapter(List<Article> news, Activity mAct) {
-        this.newsArticles = news;
+    public RecyclerViewAdapterSavedNews(List<Article> savedNewsList, Activity mAct, OnDeleteListener onDeleteListener) {
+        this.savedNewsList = savedNewsList;
         this.mAct = mAct;
+        this.onDeleteListener = onDeleteListener;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.news, parent, false);
-        return new MyViewHolder(itemView);
+                .inflate(R.layout.savednews, parent, false);
+        return new MyViewHolder(itemView, onDeleteListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.data = newsArticles.get(position);
+        holder.data = savedNewsList.get(position);
 
-        holder.cardView.setOnClickListener(v -> {
-            mAct.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(holder.data.getUrl())));
-        });
+        holder.cardView.setOnClickListener(v -> mAct.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(holder.data.getUrl()))));
 
         Picasso.get().load(holder.data.getUrlToImage())
                 .fit()
@@ -56,21 +57,35 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.textViewDate.setText(holder.data.getPublishedAt().substring(0, 10));
     }
 
-    @Override
-    public int getItemCount() {
-        return newsArticles.size();
+    public void removeAt(int position) {
+        savedNewsList.remove(position);
+        notifyDataSetChanged();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public void addNews(Article news) {
+        savedNewsList.add(news);
+        notifyDataSetChanged();
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return savedNewsList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
         CardView cardView;
         ImageView imageViewNews;
         TextView textViewTitle;
         TextView textViewDescription;
         TextView textViewSource;
         TextView textViewDate;
+        TextView textViewDeleteSavedNews;
         Article data;
+        OnDeleteListener onDeleteListener;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, OnDeleteListener onDeleteListener) {
             super(itemView);
             cardView = itemView.findViewById(R.id.cardView);
             imageViewNews = itemView.findViewById(R.id.newsImage);
@@ -78,6 +93,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewDescription = itemView.findViewById(R.id.newsDescription);
             textViewSource = itemView.findViewById(R.id.newsSource);
             textViewDate = itemView.findViewById(R.id.newsDate);
+            textViewDeleteSavedNews = itemView.findViewById(R.id.deleteSavedNews);
+            textViewDeleteSavedNews.setOnClickListener(this);
+            this.onDeleteListener = onDeleteListener;
         }
+
+        @Override
+        public void onClick(View v) {
+            onDeleteListener.OnDeleteClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnDeleteListener {
+        void OnDeleteClick(int position);
     }
 }
