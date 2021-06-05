@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="#CC000000"
     android:fillViewport="true"
-    tools:context=".firebase.SignIn">
+    tools:context=".firebaseauth.SignIn">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg3"
-        tools:context=".others.MainActivity">
+        tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/textViewRefresh"

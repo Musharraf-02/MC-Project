@@ -55,6 +55,7 @@
                 android:fontFamily="sans-serif-light"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:justificationMode="inter_word"
                 android:text="Description"
                 android:textColor="#FFFFFF" />
 

@@ -11,20 +11,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp">
-        <activity android:name=".firebase.SignIn" />
-        <activity android:name=".others.CategoryNews" />
-        <activity android:name=".others.SavedNews" />
-        <activity android:name=".others.Home" />
-        <activity android:name=".others.Preferences" />
-        <activity android:name=".firebase.SignUp" />
-        <activity android:name=".others.AboutUs" />
-        <activity android:name=".others.MainActivity">
+        <activity
+            android:name=".firebaseauth.SignIn"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CategoryNews"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Preferences"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SavedNews"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".firebaseauth.SignUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NewsCategories"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Home"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
