@@ -63,16 +63,16 @@ public class SignUp extends AppCompatActivity {
             password.setError("Enter password (at least 6 characters).");
 
         else if (uPassword.contains(" ") || uPassword.contains("\t"))
-            password.setError("Password must not contain any white space.");
+            password.setError("Password must not contain any white spaces.");
 
         else if (uPassword.length() < MINIMUM_PASSWORD_LENGTH)
             password.setError("Password must contain at least 6 characters.");
 
         else if (TextUtils.isEmpty(uConfirmPassword))
-            confirmPassword.setError("Confirm password please.");
+            confirmPassword.setError("Enter confirm password.");
 
         else if (!uPassword.equals(uConfirmPassword))
-            confirmPassword.setError("Password and confirm password does not match.");
+            confirmPassword.setError("Password and confirm password do not match.");
 
         else {
             progressBar.setVisibility(View.VISIBLE);
@@ -84,7 +84,7 @@ public class SignUp extends AppCompatActivity {
                     HashMap<String, String> user = new HashMap<>();
                     user.put("name", uName);
 
-                    Toast.makeText(getApplicationContext(), "Sign up successful.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Sign Up successful.", Toast.LENGTH_LONG).show();
 
                     firebaseFirestore.collection("users").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).set(user);
 
