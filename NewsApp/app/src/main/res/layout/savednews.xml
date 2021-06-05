@@ -50,7 +50,7 @@
                 android:id="@+id/newsDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
+                android:fontFamily="sans-serif-medium"
                 android:justificationMode="inter_word"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -81,6 +81,7 @@
                     android:layout_weight="1"
                     android:drawableLeft="@drawable/ic_outline_access_time_24"
                     android:drawablePadding="5dp"
+                    android:fontFamily="sans-serif-medium"
                     android:text="27-5-2021"
                     android:textColor="#FFFFFF" />
 
