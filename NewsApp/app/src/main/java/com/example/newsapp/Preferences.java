@@ -73,7 +73,7 @@ public class Preferences extends AppCompatActivity implements OnPreferenceCheckC
 
     public void updateUserPreferences(View view) {
         if (userPreferences.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "No preference Selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "No preferences selected.", Toast.LENGTH_SHORT).show();
         } else {
             PreferencesFirestoreHelper.addUserPreferences(userPreferences);
             Intent intent = new Intent(getApplicationContext(), Home.class);
