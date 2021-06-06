@@ -35,6 +35,7 @@ public class Preferences extends AppCompatActivity implements OnPreferenceCheckC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
@@ -57,6 +58,7 @@ public class Preferences extends AppCompatActivity implements OnPreferenceCheckC
                         findViewById(R.id.addPreferences).setVisibility(View.VISIBLE);
                         adapter = new RecyclerViewAdapterPreference(preferences, Preferences.this, Preferences.this);
                         recyclerView.setAdapter(adapter);
+                        findViewById(R.id.progressBar).setVisibility(View.GONE);
                     }
                 });
 

@@ -1,5 +1,6 @@
 package com.example.newsapp.adaptors;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -35,10 +36,11 @@ public class RecyclerViewAdapterCategory extends RecyclerView.Adapter<RecyclerVi
         return new MyViewHolder(itemView);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(newsCategories.get(position).getName().substring(0,1).toUpperCase()+ newsCategories.get(position).getName().substring(1));
-        holder.imageView.setImageResource(mAct.getResources().getIdentifier("icon_" + newsCategories.get(position).getName(), "drawable", mAct.getPackageName()));
+        holder.textView.setText(newsCategories.get(position).getName().substring(0, 1).toUpperCase() + newsCategories.get(position).getName().substring(1));
+        holder.imageView.setImageResource(mAct.getResources().getIdentifier("img_" + newsCategories.get(position).getName(), "drawable", mAct.getPackageName()));
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(mAct.getApplicationContext(), CategoryNews.class);
             intent.putExtra("category", newsCategories.get(position));

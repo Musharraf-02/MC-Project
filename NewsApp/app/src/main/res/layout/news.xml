@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/icon_politics" />
+                app:srcCompat="@drawable/img_politics" />
 
             <TextView
                 android:id="@+id/newsTitle"

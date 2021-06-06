@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.example.newsapp.R;
 import com.example.newsapp.SavedNews;
 import com.example.newsapp.interfaces.OnDeleteListener;
 import com.example.newsapp.interfaces.OnSaveListener;
+import com.google.common.base.Strings;
 import com.kwabenaberko.newsapilib.models.Article;
 import com.squareup.picasso.Picasso;
 
@@ -80,19 +82,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             mAct.startActivity(Intent.createChooser(intent, "Share via"));
         });
 
-        baseViewHolder.cardView.setOnClickListener(v -> {
-            mAct.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(baseViewHolder.data.getUrl())));
-        });
+        baseViewHolder.cardView.setOnClickListener(v -> mAct.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(baseViewHolder.data.getUrl()))));
 
-        if (!baseViewHolder.data.getUrlToImage().isEmpty())
+        if (!Strings.isNullOrEmpty(baseViewHolder.data.getUrlToImage()))
             Picasso.get().load(baseViewHolder.data.getUrlToImage())
                     .fit()
                     .centerCrop()
                     .into(baseViewHolder.imageViewNews);
 
         baseViewHolder.textViewTitle.setText(baseViewHolder.data.getTitle());
+
+        if (!Strings.isNullOrEmpty(baseViewHolder.data.getDescription())) {
+            baseViewHolder.data.setDescription(Html.fromHtml(baseViewHolder.data.getDescription().trim()).toString());
+            if (baseViewHolder.data.getDescription().length() > 90) {
+                baseViewHolder.data.setDescription(baseViewHolder.data.getDescription().substring(0, 90) + "...");
+            }
+        }
+
         baseViewHolder.textViewDescription.setText(baseViewHolder.data.getDescription());
-        baseViewHolder.textViewSource.setText(baseViewHolder.data.getSource().getName());
+        if (baseViewHolder.data.getSource() != null) {
+            baseViewHolder.textViewSource.setText(baseViewHolder.data.getSource().getName());
+        }
         baseViewHolder.textViewDate.setText(baseViewHolder.data.getPublishedAt().substring(0, 10));
     }
 

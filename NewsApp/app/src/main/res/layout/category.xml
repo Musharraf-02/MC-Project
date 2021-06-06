@@ -14,7 +14,7 @@
         android:clickable="true"
         android:foreground="?selectableItemBackground"
         card_view:cardBackgroundColor="#424242"
-        card_view:cardCornerRadius="15dp"
+        card_view:cardCornerRadius="8dp"
         card_view:cardElevation="8dp"
         card_view:cardUseCompatPadding="true">
 
@@ -26,9 +26,9 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="155dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/icon_politics" />
+                android:src="@drawable/img_politics" />
 
             <TextView
                 android:id="@+id/textView"

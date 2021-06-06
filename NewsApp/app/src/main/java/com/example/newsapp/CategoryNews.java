@@ -3,7 +3,6 @@ package com.example.newsapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +18,7 @@ import com.example.newsapp.helpers.SavedNewsFirestoreHelper;
 import com.example.newsapp.interfaces.NewsSaveListener;
 import com.example.newsapp.interfaces.OnSaveListener;
 import com.example.newsapp.models.Category;
+import com.google.common.base.Strings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.kwabenaberko.newsapilib.NewsApiClient;
 import com.kwabenaberko.newsapilib.models.Article;
@@ -85,7 +85,7 @@ public class CategoryNews extends AppCompatActivity implements OnSaveListener, N
 
     public void fetchNewsFromAPI(String query, String sortBy) {
 
-        String API_KEY = "0d074aa66c774b2c8b1a6385746436c0";
+        String API_KEY = "c2a530b3cfc643c1999221f953d0bcd2";
         NewsApiClient newsApiClient = new NewsApiClient(API_KEY);
         newsApiClient.getEverything(
                 new EverythingRequest.Builder()
@@ -99,22 +99,15 @@ public class CategoryNews extends AppCompatActivity implements OnSaveListener, N
                     public void onSuccess(ArticleResponse response) {
                         newsList = response.getArticles();
 
-                        for (int i = 0; i < newsList.size(); ++i) {
-                            Article news = newsList.get(i);
-
-                            if (news.getTitle() == null || news.getDescription() == null || news.getPublishedAt() == null
-                                    || news.getUrl() == null || news.getUrlToImage() == null || news.getSource() == null
-                                    || news.getSource().getName() == null) {
-                                newsList.remove(i--);
+                        int i = 0;
+                        while (i < newsList.size()) {
+                            if (Strings.isNullOrEmpty(newsList.get(i).getUrl())) {
+                                newsList.remove(i);
                             } else {
-
-                                news.setTitle(news.getTitle().trim());
-                                news.setDescription(Html.fromHtml(news.getDescription().trim()).toString());
-
-                                if (news.getDescription().length() > 90)
-                                    news.setDescription(news.getDescription().substring(0, 90) + "...");
+                                i++;
                             }
                         }
+
                         adapter = new RecyclerViewAdapter("News", newsList, CategoryNews.this, CategoryNews.this, null);
                         findViewById(R.id.progressBar).setVisibility(View.GONE);
                         recyclerView.setAdapter(adapter);

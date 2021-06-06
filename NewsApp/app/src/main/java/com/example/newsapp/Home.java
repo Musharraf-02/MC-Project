@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,7 +82,7 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
 
         fetchNewsFromAPI();
 
-        swipeRefreshLayout.setOnRefreshListener(() -> fetchNewsFromAPI());
+        swipeRefreshLayout.setOnRefreshListener(this::fetchNewsFromAPI);
 
         navigationView.setNavigationItemSelectedListener(this::chooseItem);
     }
@@ -155,7 +154,7 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
 
     public void fetchNewsHelper(String query, String sortBy) {
 
-        String API_KEY = "0d074aa66c774b2c8b1a6385746436c0";
+        String API_KEY = "c2a530b3cfc643c1999221f953d0bcd2";
         NewsApiClient newsApiClient = new NewsApiClient(API_KEY);
         newsApiClient.getEverything(
                 new EverythingRequest.Builder()
@@ -169,20 +168,15 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
                     public void onSuccess(ArticleResponse response) {
                         newsList = response.getArticles();
 
-                        for (int i = 0; i < newsList.size(); ++i) {
-                            Article news = newsList.get(i);
-
-                            if (Strings.isNullOrEmpty(news.getUrl())) {
-                                newsList.remove(i--);
+                        int i = 0;
+                        while (i < newsList.size()) {
+                            if (Strings.isNullOrEmpty(newsList.get(i).getUrl())) {
+                                newsList.remove(i);
                             } else {
-
-                                news.setTitle(news.getTitle().trim());
-                                news.setDescription(Html.fromHtml(news.getDescription().trim()).toString());
-
-                                if (news.getDescription().length() > 90)
-                                    news.setDescription(news.getDescription().substring(0, 90) + "...");
+                                i++;
                             }
                         }
+
                         adapter = new RecyclerViewAdapter("News", newsList, Home.this, Home.this, null);
                         findViewById(R.id.progressBar).setVisibility(View.GONE);
                         recyclerView.setAdapter(adapter);
@@ -199,9 +193,6 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
     @SuppressLint("NonConstantResourceId")
     boolean chooseItem(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.home:
-                moveToHomePage();
-                break;
             case R.id.preferences:
                 moveToPreferences();
                 break;
@@ -241,10 +232,6 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
         else
             startActivity(new Intent(getApplicationContext(), SavedNews.class));
 
-    }
-
-    public void moveToHomePage() {
-        startActivity(new Intent(getApplicationContext(), Home.class));
     }
 
     public void moveToAboutUs() {
