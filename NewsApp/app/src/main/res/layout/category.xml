@@ -11,11 +11,12 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:clickable="true"
         android:foreground="?selectableItemBackground"
-        card_view:cardCornerRadius="8dp"
-        card_view:contentPadding="5dp">
+        card_view:cardBackgroundColor="#404040"
+        card_view:cardCornerRadius="15dp"
+        card_view:cardElevation="8dp"
+        card_view:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/politics" />
+                android:src="@drawable/icon_politics" />
 
             <TextView
                 android:id="@+id/textView"
@@ -35,8 +36,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="sans-serif-medium"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="Politics"
-                android:textColor="#404040"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

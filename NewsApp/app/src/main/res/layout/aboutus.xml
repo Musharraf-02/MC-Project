@@ -36,14 +36,14 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center_horizontal"
             android:justificationMode="inter_word"
             android:lineSpacingExtra="3sp"
             android:text="The Newsarc app allows users to discover news headlines for different categories such as Politics, Health, Movies, Technology, Entertainment, and so on. The app fetches data from third-party APIs and then displays that data."
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewRefresh" />
@@ -56,7 +56,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Contributers"
             android:textColor="#C62828"
-            android:textSize="24sp"
+            android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -71,7 +71,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Hanan Raza"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -85,7 +85,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Muhammad Mehdi Ali"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -99,7 +99,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Usama Imran"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -113,7 +113,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Musharraf Tahir"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -121,14 +121,14 @@
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="340dp"
+            android:layout_marginBottom="24dp"
             android:fontFamily="sans-serif-medium"
             android:text="Copyright © 2021 Newsarc"
             android:textColor="#C62828"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

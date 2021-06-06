@@ -64,8 +64,8 @@
                     android:onClick="headlines"
                     android:text="Headlines"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:textSize="14sp"
+
                     app:backgroundTint="#C62828"
                     app:cornerRadius="5dp" />
 
@@ -81,7 +81,7 @@
                     android:onClick="moveToNewsCategories"
                     android:text="Categories"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold"
+
                     app:backgroundTint="#C62828"
                     app:cornerRadius="5dp" />
 

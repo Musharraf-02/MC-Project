@@ -88,15 +88,14 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="150dp"
             android:fontFamily="sans-serif-medium"
             android:text="Don't have an account?"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
         <Button
             android:id="@+id/button3"
@@ -107,8 +106,9 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Sign in"
             android:onClick="login"
+            android:text="Sign in"
+            android:textSize="14sp"
             app:backgroundTint="#C62828"
             app:layout_constraintEnd_toStartOf="@+id/button4"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,9 +124,10 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
-            android:text="Skip"
             android:onClick="skipToHomePage"
+            android:text="Skip"
             android:textColor="#C62828"
+            android:textSize="14sp"
             app:backgroundTint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button3"
@@ -143,7 +144,6 @@
             android:textColor="#C62828"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             tools:ignore="UsingOnClickInXml" />
