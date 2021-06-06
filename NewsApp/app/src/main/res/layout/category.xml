@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:background="#404040"
+    android:background="#303030"
     android:gravity="center_horizontal">
 
     <androidx.cardview.widget.CardView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:foreground="?selectableItemBackground"
-        card_view:cardBackgroundColor="#404040"
+        card_view:cardBackgroundColor="#424242"
         card_view:cardCornerRadius="15dp"
         card_view:cardElevation="8dp"
         card_view:cardUseCompatPadding="true">

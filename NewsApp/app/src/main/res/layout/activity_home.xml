@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#404040">
+            android:background="#303030">
 
             <TextView
                 android:id="@+id/textView11"
@@ -120,7 +120,7 @@
             android:layout_gravity="end"
             android:layout_marginEnd="-65dp"
             android:layout_marginRight="-65dp"
-            android:background="#404040"
+            android:background="#303030"
             app:headerLayout="@layout/header"
             app:itemIconTint="@color/white"
             app:itemTextColor="#FFFFFF"
