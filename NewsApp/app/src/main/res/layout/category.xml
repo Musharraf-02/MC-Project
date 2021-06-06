@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/proxima_nova"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Politics"

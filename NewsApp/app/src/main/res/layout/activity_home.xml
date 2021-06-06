@@ -24,10 +24,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/proxima_nova"
                 android:text="Explore the World"
                 android:textColor="#FFFFFF"
-                android:textSize="30sp"
+                android:textSize="32sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,11 +61,12 @@
                     android:layout_marginEnd="1dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/proxima_nova"
                     android:onClick="headlines"
                     android:text="Headlines"
                     android:textColor="#FFFFFF"
-                    android:textSize="14sp"
 
+                    android:textSize="16sp"
                     app:backgroundTint="#C62828"
                     app:cornerRadius="5dp" />
 
@@ -78,10 +79,12 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/proxima_nova"
                     android:onClick="moveToNewsCategories"
                     android:text="Categories"
-                    android:textColor="#FFFFFF"
 
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
                     app:backgroundTint="#C62828"
                     app:cornerRadius="5dp" />
 
