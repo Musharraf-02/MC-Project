@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +27,7 @@ import com.example.newsapp.interfaces.OnSaveListener;
 import com.example.newsapp.models.Category;
 import com.example.newsapp.models.Preference;
 import com.google.android.material.navigation.NavigationView;
+import com.google.common.base.Strings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -172,9 +172,7 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
                         for (int i = 0; i < newsList.size(); ++i) {
                             Article news = newsList.get(i);
 
-                            if (news.getTitle() == null || news.getDescription() == null || news.getPublishedAt() == null
-                                    || news.getUrl() == null || news.getUrlToImage() == null || news.getSource() == null
-                                    || news.getSource().getName() == null) {
+                            if (Strings.isNullOrEmpty(news.getUrl())) {
                                 newsList.remove(i--);
                             } else {
 

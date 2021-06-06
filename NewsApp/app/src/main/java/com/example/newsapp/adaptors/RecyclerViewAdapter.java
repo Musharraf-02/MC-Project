@@ -84,10 +84,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             mAct.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(baseViewHolder.data.getUrl())));
         });
 
-        Picasso.get().load(baseViewHolder.data.getUrlToImage())
-                .fit()
-                .centerCrop()
-                .into(baseViewHolder.imageViewNews);
+        if (!baseViewHolder.data.getUrlToImage().isEmpty())
+            Picasso.get().load(baseViewHolder.data.getUrlToImage())
+                    .fit()
+                    .centerCrop()
+                    .into(baseViewHolder.imageViewNews);
 
         baseViewHolder.textViewTitle.setText(baseViewHolder.data.getTitle());
         baseViewHolder.textViewDescription.setText(baseViewHolder.data.getDescription());
