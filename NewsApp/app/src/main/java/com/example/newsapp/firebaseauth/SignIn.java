@@ -61,7 +61,7 @@ public class SignIn extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
 
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Login successful.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Sign In successful.", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getApplicationContext(), Home.class));
                     finish();
                 } else

@@ -107,7 +107,7 @@ public class SavedNews extends AppCompatActivity implements OnDeleteListener, Ad
 
     @Override
     public void onNewsDelete() {
-        Toast.makeText(getApplicationContext(), "News deleted successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "News deleted successfully.", Toast.LENGTH_SHORT).show();
         fetchSavedNews(this::onAddItem);
     }
 }

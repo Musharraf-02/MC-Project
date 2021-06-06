@@ -37,7 +37,7 @@ public class RecyclerViewAdapterCategory extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(newsCategories.get(position).getName());
+        holder.textView.setText(newsCategories.get(position).getName().substring(0,1).toUpperCase()+ newsCategories.get(position).getName().substring(1));
         holder.imageView.setImageResource(mAct.getResources().getIdentifier("icon_" + newsCategories.get(position).getName(), "drawable", mAct.getPackageName()));
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(mAct.getApplicationContext(), CategoryNews.class);

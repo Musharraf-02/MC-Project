@@ -140,6 +140,6 @@ public class CategoryNews extends AppCompatActivity implements OnSaveListener, N
 
     @Override
     public void onNewsSave(boolean saveStatus) {
-        Toast.makeText(this, saveStatus ? "New saved successfully" : "News saved already", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, saveStatus ? "New saved successfully." : "News saved already.", Toast.LENGTH_SHORT).show();
     }
 }
