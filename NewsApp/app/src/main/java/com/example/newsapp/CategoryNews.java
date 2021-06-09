@@ -85,7 +85,7 @@ public class CategoryNews extends AppCompatActivity implements OnSaveListener, N
 
     public void fetchNewsFromAPI(String query, String sortBy) {
 
-        String API_KEY = "c2a530b3cfc643c1999221f953d0bcd2";
+        String API_KEY = "fe0861a443724c28997a1fbe88d2e590";
         NewsApiClient newsApiClient = new NewsApiClient(API_KEY);
         newsApiClient.getEverything(
                 new EverythingRequest.Builder()

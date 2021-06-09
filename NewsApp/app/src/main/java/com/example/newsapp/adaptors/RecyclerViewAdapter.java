@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newsapp.R;
@@ -25,6 +25,9 @@ import com.google.common.base.Strings;
 import com.kwabenaberko.newsapilib.models.Article;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.BaseViewHolder> {
@@ -73,13 +76,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             BitmapDrawable bitmapDrawable = (BitmapDrawable) baseViewHolder.imageViewNews.getDrawable();
             Bitmap bitmap = bitmapDrawable.getBitmap();
-            String path = MediaStore.Images.Media.insertImage(mAct.getContentResolver(), bitmap, "title", null);
-            Uri uri = Uri.parse(path);
+            File imagefolder = new File(mAct.getCacheDir(), "images");
+            File file = new File(imagefolder, "shared_image.png");
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            bitmap.compress(Bitmap.CompressFormat.PNG, 90, outputStream);
+            Uri uri = FileProvider.getUriForFile(mAct, "com.example.newsapp.fileprovider", file);
             Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("image/png");
             intent.putExtra(Intent.EXTRA_STREAM, uri);
-            intent.putExtra(Intent.EXTRA_TEXT, "*" + baseViewHolder.data.getTitle() + "*\n" + baseViewHolder.data.getUrl());
-            mAct.startActivity(Intent.createChooser(intent, "Share via"));
+            intent.putExtra(Intent.EXTRA_TEXT, baseViewHolder.data.getTitle() + "\n" + baseViewHolder.data.getUrl());
+            intent.setType("image/png");
+            mAct.startActivity(Intent.createChooser(intent, "Share Via"));
         });
 
         baseViewHolder.cardView.setOnClickListener(v -> mAct.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(baseViewHolder.data.getUrl()))));

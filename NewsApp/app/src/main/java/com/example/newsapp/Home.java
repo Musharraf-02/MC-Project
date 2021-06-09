@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -61,6 +63,8 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        FileProvider fileProvider;
+
         if (getIntent().getExtras() != null) {
             userPreferences = (List<Preference>) getIntent().getSerializableExtra("userPreferences");
         } else {
@@ -85,6 +89,29 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
         swipeRefreshLayout.setOnRefreshListener(this::fetchNewsFromAPI);
 
         navigationView.setNavigationItemSelectedListener(this::chooseItem);
+
+        SearchView searchView = findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (!Strings.isNullOrEmpty(query)) {
+                    Intent intent = new Intent(getApplicationContext(), CategoryNews.class);
+                    Category category = new Category();
+                    category.setName(query);
+                    String[] keywords = {query};
+                    category.setKeywords(Arrays.asList(keywords));
+                    intent.putExtra("category", category);
+                    startActivity(intent);
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
     }
 
     public void fetchNewsFromAPI() {
@@ -154,7 +181,7 @@ public class Home extends AppCompatActivity implements OnSaveListener, AddItemLi
 
     public void fetchNewsHelper(String query, String sortBy) {
 
-        String API_KEY = "c2a530b3cfc643c1999221f953d0bcd2";
+        String API_KEY = "fe0861a443724c28997a1fbe88d2e590";
         NewsApiClient newsApiClient = new NewsApiClient(API_KEY);
         newsApiClient.getEverything(
                 new EverythingRequest.Builder()
