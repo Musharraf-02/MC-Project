@@ -1,3 +1,4 @@
+/*SIGN IN USING FIREBASE AUTHENTICATION*/
 package com.example.newsapp.firebaseauth;
 
 import android.content.Intent;
