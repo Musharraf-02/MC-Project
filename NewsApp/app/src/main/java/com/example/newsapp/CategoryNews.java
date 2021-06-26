@@ -1,3 +1,4 @@
+/*TO DISPLAY SPECIFIC CATEGORY NEWS TO THE USER*/
 package com.example.newsapp;
 
 import android.annotation.SuppressLint;

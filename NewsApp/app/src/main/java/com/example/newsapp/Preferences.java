@@ -1,3 +1,4 @@
+/*TO ADD PREFERENCES FOR THE USER*/
 package com.example.newsapp;
 
 import android.content.Intent;

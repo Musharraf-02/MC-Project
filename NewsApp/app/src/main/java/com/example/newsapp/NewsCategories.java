@@ -1,3 +1,4 @@
+/*TO DISPLAY DIFFERENT CATEGORIES TO THE USER*/
 package com.example.newsapp;
 
 import android.os.Bundle;

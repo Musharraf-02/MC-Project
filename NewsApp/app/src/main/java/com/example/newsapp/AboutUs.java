@@ -1,3 +1,4 @@
+/*JUST A SIMPLE ABOUT US PAGE*/
 package com.example.newsapp;
 
 import android.annotation.SuppressLint;

@@ -1,3 +1,4 @@
+/*TO DISPLAY THE NEWS AT HOMEPAGE TO THE USER*/
 package com.example.newsapp;
 
 import android.annotation.SuppressLint;

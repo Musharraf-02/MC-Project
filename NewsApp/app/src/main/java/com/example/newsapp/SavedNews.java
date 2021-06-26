@@ -1,3 +1,4 @@
+/*FOR SAVING THE NEWS*/
 package com.example.newsapp;
 
 import android.os.Bundle;
