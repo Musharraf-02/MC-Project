@@ -77,6 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             BitmapDrawable bitmapDrawable = (BitmapDrawable) baseViewHolder.imageViewNews.getDrawable();
             Bitmap bitmap = bitmapDrawable.getBitmap();
             File imagefolder = new File(mAct.getCacheDir(), "images");
+            imagefolder.mkdirs();
             File file = new File(imagefolder, "shared_image.png");
             FileOutputStream outputStream = null;
             try {
