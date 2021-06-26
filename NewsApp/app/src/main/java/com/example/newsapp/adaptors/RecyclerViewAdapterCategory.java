@@ -1,3 +1,4 @@
+/*VIEW HOLDER CLASS FOR CATEGORY*/
 package com.example.newsapp.adaptors;
 
 import android.annotation.SuppressLint;

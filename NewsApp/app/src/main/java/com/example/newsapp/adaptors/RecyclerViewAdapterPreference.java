@@ -1,3 +1,4 @@
+/*THE RECYCLER VIEW ADOPTER TO DEFINE VIEW*/
 package com.example.newsapp.adaptors;
 
 import android.app.Activity;

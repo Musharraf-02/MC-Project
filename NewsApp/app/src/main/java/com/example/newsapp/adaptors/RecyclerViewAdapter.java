@@ -1,3 +1,4 @@
+/*RECYCLER VIEW FOR OUR NEWS DISPLAY*/
 package com.example.newsapp.adaptors;
 
 import android.app.Activity;
